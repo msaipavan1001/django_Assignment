@@ -1,6 +1,16 @@
 # Create your models here.
 from django.db import models
 
+
+#Assignment -1
+class UserProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    phone_number = models.CharField(max_length=20)
+    address = models.CharField(max_length=255)
+
+    def __str__(self):
+        return f"Profile of {self.user.username}"
+
 #Assignment -3
 class Ride(models.Model):
     pass  # Your Ride model definition
